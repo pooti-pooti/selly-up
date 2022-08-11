@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="*">
+    <title>Art Works</title>
+</head>
+<body>
+    <button class="openButtonClass" id="openButton" style="display: block;">
+        <div>
+            <img src="https://crm.ushby.org/majdkara/homepage/media/payment.png" width="100%">
+        </div>
+    </button>
+    <button class="closeButtonClass" id="closeButton">Close</button>
+    <div id="everything" class="everything">
+<table style="border-collapse: collapse; width: 100%;" border="0">
+    <tbody>
+        <tr>
+            <td id="crm-td" class="crm-td" style="width: 0.0009%;">
+                <iframe id="iframecrm" class="crmclass" src="/index.php?module=ext/public/form&id=2" >                        
+                </iframe>
+                <img class="belowLogo" src="https://crm.ushby.org/majdkara/homepage/media/crm-header.jpg"> 
+            </td>
+            <td style="width: 70%;">
+                 <iframe  id="firstiframe" class="firstframe" src="/majdkara/index.php?/category/2"> 
+                </iframe>
+            </td>
+        </tr>
+    </tbody>
+</table>
+    </div>
+</body>
+</html>
+<style>
+body {
+    margin : -2px 0px 0px 0.7px;
+    background-color : #272b30;
+}
+.belowLogo {
+    object-fit: cover;
+    height: 77px;
+    width: 101.3%;
+    margin: -7px 0px -40px 0px;
+    padding-top: -1px;
+    border-top: 0px solid #2e4756;
+}
+.openButtonClass {
+  left: 3px;
+  position: fixed;
+  top: 0px:;
+  top: 33px;
+  height: 53px;
+  width: 59px;
+  text-align: center;
+  font-size: 21px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  color: #d2c9c0;
+  cursor: pointer;
+  border-top-right-radius: 13px;
+  border-bottom-right-radius: 9px;
+}
+.openButtonClass:hover {
+background: #b1b4b7;
+color: #a8a183;
+}
+.closeButtonClass {
+    left: 22%;
+    position: fixed;
+    top: 0px:;
+    top: -2px;
+    background: #273055;
+    height: 33px;
+    width: 84px;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    color: #d2c9c0;
+    cursor: pointer;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: none;
+}
+.closeButtonClass:hover {
+background: #202229;
+color: #272b30;
+}
+.everything {
+    width:100%;
+}
+.crm-td {
+    background-color: #fff;
+}
+.firstframe {
+    border: none;
+    width: 100%;
+    height: 1430px;
+    height:928px;
+}
+
+.crmclass {
+    border-top: 3px solid #16262e;
+    width: 103%;
+    margin: -40px -9px 0px -9px;
+    height: 645px;
+    background-color: #fef6d9;
+}
+@media (max-width : 963px) {
+.row    {
+    margin-left: 16%;
+    }
+}
+@media (max-width : 728px) {
+    .theheader    {
+        padding-left: 50px;
+        }
+    }
+
+@keyframes menuOpen {
+    from {
+    width: 0.0009%;
+}
+    to {
+    width: 43%;
+    -webkit-animation-fill-mode: forwards; 
+    }
+}
+@keyframes menuClose {
+    from {
+    width: 43%;
+}
+    to {
+    width: 0.0009%;
+    -webkit-animation-fill-mode: forwards; 
+    }
+}
+@keyframes menuOpenSmall {
+    from {
+    width: 0.0009%;
+}
+    to {
+    width: 100%;
+    -webkit-animation-fill-mode: forwards; 
+    }
+}
+@keyframes menuCloseSmall {
+    from {
+    width: 100%;
+}
+    to {
+    width: 0.0009%;
+    -webkit-animation-fill-mode: forwards; 
+    }
+}
+</style>
+<script>
+// Styling the page based on the user's computer to avoid any iframes overlapping
+
+document.getElementById("firstiframe").style.height = (window.innerHeight - 4.5 + "px");
+document.getElementById("crm-td").style.height = (window.innerHeight + "px");
+document.getElementById("iframecrm").style.height = (window.innerHeight  - 79 + "px");
+
+// Slider
+
+const openButton = document.getElementById("openButton");
+const closeButton = document.getElementById("closeButton");
+
+openButton.addEventListener('click', open);
+closeButton.addEventListener('click', close);
+
+function open(){
+    if (window.innerWidth > 800) {
+	document.getElementById("crm-td").style.animation = ("menuOpen 1.5s");
+    document.getElementById("crm-td").style.webkitAnimationFillMode = ("forwards");
+	openButton.style.display = ("none");
+    document.getElementById("closeButton").style.display = ("block");
+    } else {
+        document.getElementById("crm-td").style.animation = ("menuOpenSmall 1.5s");
+        document.getElementById("crm-td").style.webkitAnimationFillMode = ("forwards");
+        openButton.style.display = ("none");
+        document.getElementById("closeButton").style.display = ("block");
+    }
+};
+
+function close(){
+    if (window.innerWidth > 800){
+    document.getElementById("crm-td").style.animation = ("menuClose 1.5s");
+    document.getElementById("crm-td").style.webkitAnimationFillMode = ("forwards");
+	document.getElementById("closeButton").style.display = ("none");
+ 	document.getElementById("openButton").style.display = ("block");
+    } else {
+        document.getElementById("crm-td").style.animation = ("menuCloseSmall 1.5s");
+        document.getElementById("crm-td").style.webkitAnimationFillMode = ("forwards");
+        document.getElementById("closeButton").style.display = ("none");
+        document.getElementById("openButton").style.display = ("block");
+    }
+};
+
+// The part that hanlds drag and drop feature
+
+var imageUrl1 = document.getElementById("fields_791");
+var imageUrlBox = document.getElementById('fields_791_rendered_value');
+imageUrlBox.insertAdjacentHTML('beforeend', '<div id="above-dragged"><div id="dragged-img"></div></div>'); 
+
+document.getElementById("fields_791").style = ('height: 250px; background-image: url("https://crm.ushby.org/majdkara/homepage/media/drag.png");');
+
+imageUrl1.addEventListener("drop", update);
+
+function update(evt) {
+    evt.stopPropagation();
+    evt.preventDefault();
+	
+	var droppedHTML = evt.dataTransfer.getData("text/html");
+	var dropContext = $('<div>').append(droppedHTML);
+	var imgURL = $(dropContext).find("img").attr('src');
+
+  	document.getElementById("fields_791").value = imgURL;
+  	var imageUrlValue = document.getElementById("fields_791").value;
+  	document.getElementById("fields_791").style = ('font-size :0px; width: 100%; height: 250px;');
+    document.getElementById("fields_791").style = ('background-image: url("' + imageUrlValue + '"); background-size: contain; background-repeat: round;');
+};   
+</script>
