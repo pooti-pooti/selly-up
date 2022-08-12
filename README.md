@@ -34,7 +34,7 @@ The two licenses are :
 Keep in mind that the root folder containts three other folders for each system and the home.html is the thing that merges them.
 Therefore, for each install the directory will be one extra tree, the folders will be called sysOne for `osTicket`, sysTwo for `Piwigo` and sysThree for (InvoicePlane).
 
-1. Install sysOne by going to `http://your-domain.com/sysTwo` and following the instruction there.
+1. Install sysOne by going to `http://your-domain.com/sysOne` and following the instruction there.
 2. Open the sysTwo in you web browser `http://your-domain.com/sysTwo/piwigo-netinstall.php`
 3. Once all files are transfered, go to the web address with a web browser, for example `http://example.com/sysTwo/photos` Piwigo will detect nothing is installed yet, and redirect you to the installation page.
 4. Now comes the MySQL database settings and the webmaster account to administer your gallery
