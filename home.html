@@ -10,7 +10,7 @@
 <body>
     <button class="openButtonClass" id="openButton" style="display: block;">
         <div>
-            <img src="https://crm.ushby.org/majdkara/homepage/media/payment.png" width="100%">
+            <img src="/media/payment.png" width="100%">
         </div>
     </button>
     <button class="closeButtonClass" id="closeButton">Close</button>
@@ -21,10 +21,10 @@
             <td id="crm-td" class="crm-td" style="width: 0.0009%;">
                 <iframe id="iframecrm" class="crmclass" src="/index.php?module=ext/public/form&id=2" >                        
                 </iframe>
-                <img class="belowLogo" src="https://crm.ushby.org/majdkara/homepage/media/crm-header.jpg"> 
+                <img class="belowLogo" src="/media/crm-header.jpg"> 
             </td>
-            <td style="width: 70%;">
-                 <iframe  id="firstiframe" class="firstframe" src="/majdkara/index.php?/category/2"> 
+            <td id="gallery-td" class="gallery-td-class" style="width: 70%;">
+                 <iframe  id="firstiframe" class="firstframe" src="/sysTwo/index.php"> 
                 </iframe>
             </td>
         </tr>
@@ -69,7 +69,6 @@ color: #a8a183;
 .closeButtonClass {
     left: 22%;
     position: fixed;
-    top: 0px:;
     top: -2px;
     background: #273055;
     height: 33px;
@@ -98,7 +97,8 @@ color: #272b30;
     border: none;
     width: 100%;
     height: 1430px;
-    height:928px;
+    height: 928px;
+/* One of the above heights is correct */
 }
 
 .crmclass {
@@ -206,7 +206,7 @@ var imageUrlBox = document.getElementById('fields_791_rendered_value');
 	
 imageUrlBox.insertAdjacentHTML('beforeend', '<div id="above-dragged"><div id="dragged-img"></div></div>'); 
 
-document.getElementById("fields_791").style = ('height: 250px; background-image: url("https://crm.ushby.org/majdkara/homepage/media/drag.png");');
+document.getElementById("fields_791").style = ('height: 250px; background-image: url("/media/drag.png");');
 
 imageUrl1.addEventListener("drop", update);
 
