@@ -1,4 +1,4 @@
-<h1>Sellart</h1>
+<h1>Selly Up</h1>
 
 An integrated platform of three systems that allows the clients to buy and inquire about the sold art, helps the aritst issue invoices and handle request with less time and more efficiency and provides a bidding mechanism for artists to put their work for bidding.
 
